@@ -157,24 +157,24 @@ p {
  outline-style: dashed;
 }
 
-.birthdayCard:hover {
+.birthdayCard.open {
  transform: translateX(50px) perspective(2500px) rotate(5deg);
  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 0 10px 100px rgba(0, 0, 0, 0.5);
 }
 
-.birthdayCard:hover .cardFront {
+.birthdayCard.open .cardFront {
  transform: rotateY(-160deg);
 }
 
-.birthdayCard:hover .happy , 
-.birthdayCard:hover .balloonOne,
-.birthdayCard:hover .balloonTwo,
-.birthdayCard:hover .balloonThree,
-.birthdayCard:hover .balloonFour {
+.birthdayCard.open .happy , 
+.birthdayCard.open .balloonOne,
+.birthdayCard.open .balloonTwo,
+.birthdayCard.open .balloonThree,
+.birthdayCard.open .balloonFour {
  visibility: hidden;
 }
 
-.birthdayCard:hover .salmah{
+.birthdayCard.open .salmah{
     visibility: visible;
     opacity: 1;
     transition: visibility 0s linear 300ms, opacity 10ms ease-in;

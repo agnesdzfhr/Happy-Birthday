@@ -33,7 +33,7 @@
 </div>
 <center style="margin-top: 20px;">
 
-  <audio controls autoplay="true" id="birthdaySong">
+  <audio controls autoplay="true" id="birthdaySong" hidden>
     <source src="./happy-birthday-funk-spot-16197.mp3" type="audio/mp3">
   
     Your browser does not support the audio element.
@@ -44,9 +44,15 @@
   const birthdayCard = document.querySelector('.birthdayCard');
   const birthdaySong = document.getElementById('birthdaySong');
 
-  birthdayCard.addEventListener('mouseenter', () => {
+  birthdayCard.addEventListener('click', () => {
+    birthdayCard.classList.add('open');
     birthdaySong.play();
   });
+
+  birthdaySong.addEventListener('ended', () => {
+      // Ketika lagu selesai, tambahkan kelas 'closed' ke card dan tampilkan tombol buka
+      birthdayCard.classList.remove('open');
+    });
 
 </script>
 </body>
