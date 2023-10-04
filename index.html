@@ -43,12 +43,21 @@
 <script>
   const birthdayCard = document.querySelector('.birthdayCard');
   const birthdaySong = document.getElementById('birthdaySong');
+  let isCardOpen = false;
 
   birthdayCard.addEventListener('click', () => {
-    birthdayCard.classList.add('open');
-    birthdaySong.play();
+    if (!isCardOpen) {
+      // Buka card dan mainkan lagu
+      birthdayCard.classList.add('open');
+      birthdaySong.play();
+      isCardOpen = true;
+    } else {
+      // Tutup card dan hentikan lagu
+      birthdayCard.classList.remove('open');
+      birthdaySong.pause();
+      isCardOpen = false;
+    }
   });
-
   birthdaySong.addEventListener('ended', () => {
       // Ketika lagu selesai, tambahkan kelas 'closed' ke card dan tampilkan tombol buka
       birthdayCard.classList.remove('open');
