@@ -31,15 +31,23 @@
   </div>
 </div>
 </div>
-<script src="main.js"></script>
 <center style="margin-top: 20px;">
 
-  <audio controls autoplay>
-    <source src="./happy-birthday-funk-spot-16197.mp3" type="audio/mpeg">
+  <audio controls autoplay="true" id="birthdaySong">
+    <source src="./happy-birthday-funk-spot-16197.mp3" type="audio/mp3">
   
     Your browser does not support the audio element.
   </audio>
 
 </center>
+<script>
+  const birthdayCard = document.querySelector('.birthdayCard');
+  const birthdaySong = document.getElementById('birthdaySong');
+
+  birthdayCard.addEventListener('mouseenter', () => {
+    birthdaySong.play();
+  });
+
+</script>
 </body>
 </html>
