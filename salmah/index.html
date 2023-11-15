@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Happy birthday project</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <h2>Click this card</h2>
+<div class="body">
+ <div class="birthdayCard">
+<div class="cardFront"><h3 class="happy">HAPPY BIRTHDAY!</h3>
+<img class="salmah" src="../images/salmah.jpeg" alt="Salmah Oktavia Nurhidayati Jauhari">
+<div class="balloons">
+  <div class="balloonOne"></div>
+  <div class="balloonTwo"></div>
+  <div class="balloonThree"></div>
+  <div class="balloonFour"></div>
+</div>
+</div>
+<div class="cardInside">
+    <h3 class="back">HAPPY BIRTHDAY!</h3>
+    <p>Dear Salmah,</p> 
+    <p style="font-size: small;">Happy birthday turis jerman!! semangat menempuh hidup sebagai mahasiswi calon magister yuhuuu. Yuk aku tunggu kabar
+    sidang dan wisudanya 👩‍🎓, janlup kabar undangannya juga kalau udh ada calon 👰🤵 WKKWKWKW. Telat sii ngucapinnya maap
+    wkwkwkwk🙏</p>
+    <p class="name">Silver</p>
+  </div>
+</div>
+</div>
+<center style="margin-top: 20px;">
+
+  <audio controls autoplay="true" id="birthdaySong" hidden>
+    <source src="./happy-birthday-funk-spot-16197.mp3" type="audio/mp3">
+  
+    Your browser does not support the audio element.
+  </audio>
+
+</center>
+<script>
+  const birthdayCard = document.querySelector('.birthdayCard');
+  const birthdaySong = document.getElementById('birthdaySong');
+  let isCardOpen = false;
+
+  birthdayCard.addEventListener('click', () => {
+    if (!isCardOpen) {
+      // Buka card dan mainkan lagu
+      birthdayCard.classList.add('open');
+      birthdaySong.play();
+      isCardOpen = true;
+    } else {
+      // Tutup card dan hentikan lagu
+      birthdayCard.classList.remove('open');
+      birthdaySong.pause();
+      isCardOpen = false;
+    }
+  });
+  birthdaySong.addEventListener('ended', () => {
+      // Ketika lagu selesai, tambahkan kelas 'closed' ke card dan tampilkan tombol buka
+      birthdayCard.classList.remove('open');
+    });
+
+</script>
+</body>
+</html>
